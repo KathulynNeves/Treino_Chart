@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chart</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="chart"></div>
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <div class="Titulo">
+        <h1>Base de dados INEP</h1>
+    </div>
+    
+    <div class="centro">
+        <div id="chart"></div>
+        <div id="chart2"></div>
+    </div>
+
+    <div id="chart3"></div>
+
     <script>
         google.charts.load('current', {packages: ['corechart']});
         google.charts.setOnLoadCallback(drawChart);
@@ -20,19 +30,88 @@
                 ['Aprovação', 91],
                 ['Reprovação', 4.2],
                 ['Abandono escolar', 4.8]
+                
             ])
 
             const options = {
                 title: 'Desempenho Acadêmico 2022',
                 height: 400,
-                width: 720
+                width: 720,
+                colors:['#15CAB6', '#287E8F', '#EF8A5A'],
+                backgroundColor: '#323447',
+                color: 'pink'
+                
             }
 
             const chart = new google.visualization.PieChart(container)
             chart.draw(data, options)
+            
         }
-
+        
     </script>
+    
+    <script>
+        google.charts.load('current', {packages: ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart(){
+            const container = document.querySelector('#chart2')
+            const data = new google.visualization.arrayToDataTable([
+                ['Character', 'Aprovação', {role: 'style'}],
+                ['Aprovação', 70, '#15CAB6'],
+                ['Reprovação', 30, '#EF8A5A']
+                
+            ])
+
+            const options = {
+                title: 'Taxa de aprovação dos professores',
+                height: 400,
+                width: 720,
+                backgroundColor: '#323447',
+                position: 'right',
+                
+            }
+
+            const chart2 = new google.visualization.ColumnChart(container)
+            chart2.draw(data, options)
+            
+        }
+        
+    </script>
+
+    <script>
+        google.charts.load('current', {packages: ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart(){
+            const container = document.querySelector('#chart3')
+            const data = new google.visualization.arrayToDataTable([
+                ['Character', 'Aprovação'],
+                ['2018', 18],
+                ['2019', 25],
+                ['2020', 10],
+                ['2021', 15],
+                ['2021', 20]
+                
+            ])
+
+            const options = {
+                title: 'Taxa de aprovação dos professores',
+                height: 400,
+                colors:['#15CAB6', '#EF8A5A'],
+                backgroundColor: '#323447',
+                
+                
+            }
+
+            const chart3 = new google.visualization.LineChart(container)
+            chart3.draw(data, options)
+            
+        }
+        
+    </script>
+
+    
     
 </body>
 </html>

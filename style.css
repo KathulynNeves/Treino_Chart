@@ -1,3 +1,39 @@
 body{
     background-color: #262735;
 }
+
+#chart{
+    display: inline-block;
+    padding-top: 20px;
+    border-radius: 2px;
+    color: white;
+}
+#chart2{
+    display: inline-block;
+    padding-top: 20px;
+    border-radius: 2px;
+}
+#chart3{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-left: 27px;
+    padding-right: 27px;
+    border-radius: 10px;
+}
+
+.Titulo{
+    background-color: #323447;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.centro{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
