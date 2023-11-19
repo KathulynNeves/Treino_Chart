@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta Corrente</title>
+</head>
+<body>
+    <form action="" class="form">
+        <h2>Gere seu gráfico</h2>
+        <label for="" class="LabTp">Escolha o tipo de gráfico que deseja visualizar: </label>
+        <select class="TipoGraf">
+            <option value="linha">Linha</option>
+            <option value="barra">Barra</option>
+            <option value="radar">Radar</option>
+            <option value="pizza">Pizza</option>
+        </select>
+        <label for="" class="LabTp">Escolha o arquivo para o gráfico: </label>
+        <label for="csvFile" class="LabOp">Escolher arquivo</label>
+        <input class="csvFile" type="file" name="csvFile" id="csvFile" accept=".csv">
+        <button type="button" id="GeraChart" class="GeraChart">Gerar Gráfico</button>
+    </form>
+    
+    
+    <div class="chart">
+        <canvas id="chart"></canvas>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="GerarChart.js"></script>
+    <script src="ContaBancaria.js"></script>
+</body>
+</html>
